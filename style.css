@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* HEADER STYLING */ 
+/* ************************************************************************************** */
+.hero-image{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("pic/WideLibrary.jpg");
+
+	width: 100%;
+	padding: 24% 0;
+	background-position: center;
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+ 	position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 6vw;
+}
+
+.hero-sub {
+  font-size: .65em;
+}
+
+
+.social-icon {
+	position: fixed;
+	height: 6vw;
+	width: auto;
+	margin-left: 3%;
+
+}
+
+.spacer {
+	margin-top: 8%
+}
+
+/* BODY STYLING */ 
+/* ************************************************************************************** */
+body{
+	margin: 0;
+	background-color: #8E8D8A;
+	color: white;
+	font-family: Roboto;
+	line-height: 1.75em;
+}
+
+h1{
+	text-align: center;
+	font-weight: 300;
+	font-size: 3em;
+	letter-spacing: 2px;
+	color: #E85A4F;
+	margin: 0 0 1em 0;
+}
+
+h3{
+	margin: 0;
+}
+
+td {
+	padding: .75em;
+	vertical-align: top;
+}
+
+
+
+.profile-title{
+	width: 30%;
+}
+
+.vert-middle{
+	vertical-align: middle;
+}
+
+.info-section{
+	width: 70%;
+	background-color: #EAE7DC;
+	padding:0 15%;
+	text-align: left;
+	color: black;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+.info-alt{
+	background-color: #F0EAD6;
+}
+
+.info{
+	text-align: left;
+}
+
+.title-container{
+	vertical-align: top;
+}
+
+.title{
+	font-weight: bold;
+	font-size: 1.5em;
+	margin: 0;
+	color: #6A2E35;
+
+}
+
+.sub{
+	margin: 0;
+	font-size: .8em;
+
+}
+.desc{
+	text-align: left;
+}
+
+.circle-icon-container{
+	vertical-align: middle;
+}
+
+.circle-icon{
+	height: 20em;
+}
+
+/* ************************************************************************************** */
+.footer {
+	color: white;
+}
+
+#footer a{
+	text-decoration: underline;
+	color: #1959C9;
+}
+
+

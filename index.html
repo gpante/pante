@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gabe Pante</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER ---------------------->
+
+  <div class="hero-image">
+    <a href="https://www.linkedin.com/in/gabe-pante" target="_blank" ><img class="social-icon" src="pic/linkedin.png"></a>
+    <a href="http://www.github.com/gpante" target="_blank"><img class="social-icon spacer" src="pic/github.png"></a>
+    <div class="spacer"></div>
+    <a href="mailto:gabe.s.pante@gmail.com" target="_blank"><img class="social-icon spacer" src="pic/gmail.png"></a>
+
+    <div class="hero-text"><br>
+      Gabe Pante
+      <hr width=50% color="#E85A4F">
+      <div class="hero-sub typewrite" data-period="2000" data-type='["Software Developer", "Learner", "Communicator", "Innovator"]'>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY ------------------------>
+  <!-- INTRO -->
+  <div class="info-section">
+    <table>
+      <tr>
+        <h1>Profile</h1>
+      </tr>
+      <tr>
+        <td class="profile-title vert-middle">I am a fourth-year Computer Science and Communication major at UW-Madison. Driven to create efficient software in a friendly yet effective work environment, I work well in teams by facilitating communication and delegating leadership roles to suit my team's strengths.</td>
+        <td class="circle-icon-container"><img src="pic/circle-icon.png" class="circle-icon"></td>
+        </td>        
+        <td class="vert-middle">
+            <strong>Name:</strong> Gabe Pante<br>
+            <strong>Age:</strong> 21<br>
+            <strong>Location:</strong> Madison, Wisconsin<br>
+            <strong>Pokémon GO:</strong> Level 40, Valor
+            </td>
+      </tr>
+      </div>
+    </table>
+  </div>
+  <!-- WORK -->
+  <div class="info-section info-alt">
+   <br><table>
+      <tr>
+        <h1>Work Experience</h1>
+      </tr>
+      <div class="info">
+        <tr>
+          <td width="300">
+            <div class="title">Adventure Learning Programs</div>
+            <div class="sub">Dec 2018 - Dec 2019</div>
+          </td>
+          <td class="desc">
+            <h3>Student Director</h3><br>
+            Adventure Learning Programs (ALPs) is a group on campus that facilitates workshops that challenges individuals to learn about themselves through experiential education and adventure based learning. In doing so, participants improve their teamwork, communication, and trust with each other.<br>
+            As Student Director, I was responsible for daily organizational needs such as interfacing with workshop requestors, delegating tasks to other project teams, and holding meetings within ALPs leadership to improve our internal and external programming. 
+          </td>
+        </tr>
+        <tr>
+          <td><br><td>
+          </tr>
+          <tr>
+            <td>
+              <div class="title">Adventure Learning Programs</div>
+            <div class="sub">Nov 2017 - Dec 2018</div>
+            </td>
+            <td class="desc">
+              <h3>Facilitator</h3><br>
+              As a facilitator, I would be assigned a group for which I would host a workshop. To do so, I would reach out to the requestor, hold a meeting to assess their group, plan a workshop that suits their needs and group state, and execute the workshop with other fellow facilitators. 
+            </td>
+          </tr>
+        </div>
+      </table>
+    </div>
+
+    <!-- PROJECTS -->
+
+
+    <!-- EDUCATION -->
+    <div class="info-section">
+      <br><table>
+        <tr>
+          <h1>Education</h1>
+        </tr>
+        <div class="info">
+          <tr>
+            <td class="title-container" width="300">
+              <h2 class ="title">University of Wisconsin - Madison</h2>
+              <div class="sub">Sept 2016 - Dec 2019</div>
+            </td>
+            <td class="desc">
+              <h3>B.S. Computer Science & B.S. Communication Arts</h3> <br>
+              <div class="desc">My time at UW Madison was primarily focused on Computer Science with a secondary focus in Communication Arts. Here, I learned CS basics in Java, Python, Data Structures, and Algorithms while also exploring advanced topics such as Machine Learning, Data Science, and Artifical Intelligence.<br>Due to the importance of teams and collaborative work, I've also pursued a major in communications. In communications, I've studied the psychology of interpersonal communication, group dynamics, and decision making.</div>
+            </td>
+          </tr>
+        </div>
+      </table>
+    </div>
+
+  </div>
+  <!-- FOOTER ---------------------->
+
+
+  <!-- SCRIPTS ------------------------->
+  <script>
+    var TxtType = function(el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+      var that = this;
+      var delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) { delta /= 2; }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(function() {
+        that.tick();
+      }, delta);
+    };
+
+    window.onload = function() {
+      var elements = document.getElementsByClassName('typewrite');
+      for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+// INJECT CSS
+var css = document.createElement("style");
+css.type = "text/css";
+css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+document.body.appendChild(css);
+};
+</script>
+</body>
+</html>

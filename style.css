@@ -1,10 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+/*
+Classes to alter
+
+--Definitely--
+
+Hero Text
+Profile Title
+Profile
+** Info section?
+h2.title
+sub
+h3
+** collapsible
+** content
+h1
+skills
+desc
+
+
+--Maybe--
+
+Hero Picture
+
+*/
+
+
+
 /* HEADER STYLING */ 
 /* ************************************************************************************** */
 .hero-image{
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("pic/WideLibrary.jpg");
-
 	width: 100%;
 	padding: 24% 0;
 	background-position: center;
@@ -36,10 +62,6 @@
 
 }
 
-.spacer {
-	margin-top: 8%
-}
-
 /* BODY STYLING */ 
 /* ************************************************************************************** */
 body{
@@ -69,13 +91,8 @@ td {
 }
 
 
-
 .profile-title{
 	width: 30%;
-}
-
-.vert-middle{
-	vertical-align: middle;
 }
 
 .info-section{
@@ -117,6 +134,20 @@ td {
 	text-align: left;
 }
 
+.skills{
+	width: 15%;
+	text-align: left;
+}
+
+.stars{
+	width: 25%;
+	text-align: center;
+}
+
+.skills-table{
+	font-size: 1.2em;
+}
+
 .circle-icon-container{
 	vertical-align: middle;
 }
@@ -135,4 +166,58 @@ td {
 	color: #1959C9;
 }
 
+/* ************************************************************************************** */
 
+
+.vert-middle{
+	vertical-align: middle;
+}
+
+.hori-right{
+	text-align: right;
+}
+
+.spacer {
+	margin-top: 8%
+}
+
+.collapsible {
+  background-color: #E8DEBD;
+  color: #6A2E35;
+  cursor: pointer;
+  padding: 2%;
+  width: 100%;
+  border: none;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+.active, .collapsible:hover {
+  background-color: #E7D28E;
+  color: #A03340;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #E8DEBD;
+  font-size: .85em;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flex hr {
+	width: 100%;
+	border: 0;
+	margin, padding: 0;
+}
+
+.break {
+	flex-basis: 100%;
+	height: 0;
